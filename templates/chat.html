@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediBot - Medical Assistant</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>💡 Health Tips</h2>
+      <ul>
+        <li><i class="fa-solid fa-heartbeat"></i> Stay hydrated</li>
+        <li><i class="fa-solid fa-apple-whole"></i> Eat more fruits & veggies</li>
+        <li><i class="fa-solid fa-person-walking"></i> Exercise daily</li>
+        <li><i class="fa-solid fa-bed"></i> Sleep 7–8 hours</li>
+        <li><i class="fa-solid fa-brain"></i> Manage stress</li>
+      </ul>
+
+      <div class="quick-links">
+        <h3>⚡ Quick Ask</h3>
+        <button onclick="quickAsk('What is diabetes?')">Diabetes</button>
+        <button onclick="quickAsk('What is asthma?')">Asthma</button>
+        <button onclick="quickAsk('What is migraine?')">Migraine</button>
+      </div>
+    </aside>
+
+    <!-- Chat Area -->
+    <div class="chat-wrapper">
+      <div class="chat-header">
+        <h1>🩺 MediBot</h1>
+        <p>Your friendly medical assistant</p>
+      </div>
+
+      <div id="chat-box" class="chat-box"></div>
+
+      <form id="chat-form" class="chat-form">
+        <input 
+          type="text" 
+          id="user-input" 
+          placeholder="Type your question here..." 
+          autocomplete="off" 
+        />
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+
+      <footer class="chat-footer">
+        ⚠️ This chatbot provides general medical info. Always consult a doctor for serious concerns.
+      </footer>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
